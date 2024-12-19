@@ -2,23 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Item.gd" id="1_di80y"]
 [ext_resource type="Texture2D" uid="uid://o1pnxci12e7v" path="res://Assets/ItemIcons/Apple.png" id="2_bmh08"]
-
-[sub_resource type="FontFile" id="FontFile_c4abh"]
-resource_local_to_scene = true
-cache/0/9/0/ascent = 0.0
-cache/0/9/0/descent = 0.0
-cache/0/9/0/underline_position = 0.0
-cache/0/9/0/underline_thickness = 0.0
-cache/0/9/0/scale = 1.0
-cache/0/9/0/kerning_overrides/9/0 = Vector2(0, 0)
-cache/0/9/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/9/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+[ext_resource type="FontFile" uid="uid://b0fj14w6xvshv" path="res://Assets/fonts/PixelOperator8.ttf" id="3_i8iof"]
 
 [node name="Item" type="Node2D"]
 z_index = 1
@@ -40,10 +24,10 @@ mouse_filter = 2
 texture = ExtResource("2_bmh08")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 12.0
-offset_bottom = 12.0
-theme_override_fonts/font = SubResource("FontFile_c4abh")
-theme_override_font_sizes/font_size = 9
+texture_filter = 1
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("3_i8iof")
+theme_override_font_sizes/font_size = 8
 text = "99"
