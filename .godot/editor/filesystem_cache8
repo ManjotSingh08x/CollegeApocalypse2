@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1734614772
+::res://::1734615202
 README.md::TextFile::-1::1734613842::0::1::::<><>::
 Stick.gd::GDScript::-1::1734613842::0::1::::<>StaticBody2D<>::
 ::res://Assets/::1734614772
@@ -29,18 +29,18 @@ Apple.png::CompressedTexture2D::1037252814276225373::1734613842::1734613888::1::
 ironSword.png::CompressedTexture2D::2761169306383859406::1734613842::1734613888::1::::<><>::
 Stick.png::CompressedTexture2D::7052571432444840100::1734613842::1734613888::1::::<><>::
 Sword.png::CompressedTexture2D::3248913483059961444::1734613842::1734613888::1::::<><>::
-::res://Assets/Pixelify_Sans/::1734614762
+::res://Assets/Pixelify_Sans/::1734614772
 OFL.txt::TextFile::-1::1734614695::0::1::::<><>::
 PixelifySans-VariableFont_wght.ttf::FontFile::5044100360458633707::1734614695::1734614772::1::::<><>::
 README.txt::TextFile::-1::1734614695::0::1::::<><>::
-::res://Assets/Pixelify_Sans/static/::1734614762
+::res://Assets/Pixelify_Sans/static/::1734614772
 PixelifySans-Bold.ttf::FontFile::7623833633185314050::1734614695::1734614772::1::::<><>::
 PixelifySans-Medium.ttf::FontFile::8239919643477412455::1734614695::1734614772::1::::<><>::
 PixelifySans-Regular.ttf::FontFile::5300640826628702612::1734614695::1734614772::1::::<><>::
 PixelifySans-SemiBold.ttf::FontFile::2087559559884290940::1734614695::1734614772::1::::<><>::
 ::res://Data/::1734613842
 ItemData.json::JSON::-1::1734613842::0::1::::<><>::
-::res://Scenes/::1734614267
+::res://Scenes/::1734614940
 chest.gd::GDScript::-1::1734613842::0::1::::<>StaticBody2D<>::
 chest.tscn::PackedScene::8029191120605437069::1734614265::0::1::::<><>::uid://dtyei722mgb0x::::res://Assets/Chest/default_chest.png<>res://Scenes/chest.gd<>uid://b46xkpdowosh6::::res://Assets/InventoryAssets/chest_inv.png<>res://Scenes/Chest_inv.gd<>res://Scripts/slot.gd
 Chest_inv.gd::GDScript::-1::1734613842::0::1::::<>Area2D<>::
@@ -49,7 +49,7 @@ double_room.tscn::PackedScene::3206775798461818346::1734614267::0::1::::<><>::ui
 HealthBar.tscn::PackedScene::5188598640087068364::1734614267::0::1::::<><>::
 inventory.gd::GDScript::-1::1734614245::0::1::::<>Area2D<>::
 inventory.tscn::PackedScene::8940875234215055502::1734614265::0::1::::<><>::res://Scenes/inventory.gd<>uid://ca8c576a5phqg::::res://Assets/InventoryAssets/new_inv.png<>uid://g1v4ybfl14lg::::res://Assets/InventoryAssets/inv_slot.png<>res://Scripts/slot.gd
-item.tscn::PackedScene::3523450705393641718::1734614265::0::1::::<><>::res://Scripts/Item.gd<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png
+item.tscn::PackedScene::3523450705393641718::1734614940::0::1::::<><>::res://Scripts/Item.gd<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf
 pickup.tres.gd::GDScript::-1::1734614025::0::1::::<>CharacterBody2D<>::
 pickupitem.tscn::PackedScene::4411753671374877279::1734614265::0::1::::<><>::res://Scenes/pickup.tres.gd
 Pickupzone.gd::GDScript::-1::1734613842::0::1::::<>Area2D<>::

@@ -1,6 +1,5 @@
 res://Scenes/player.tscn
 res://Scenes/pickup.tres.gd
-res://Scenes/inventory.gd
 res://Scenes/inventory.tscn
 res://Scenes/pickupitem.tscn
 res://Scenes/item.tscn
