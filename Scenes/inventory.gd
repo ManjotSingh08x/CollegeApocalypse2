@@ -46,7 +46,8 @@ func add_item_quantity(slot: SlotClass, quantity_to_add: int):
 	inventory[slot.slot_index][1] += quantity_to_add
 	
 func update_slot_visual(slot_index, item_name, item_quantity):
-	var slot= get_tree().root.get_node("Game/Player/Inventory/GridContainer/Slot" + str(slot_index+1))
+	var current_scene = get_tree().current_scene
+	var slot= get_tree().root.get_node(str(current_scene.name) + "/Player/Inventory/GridContainer/Slot" + str(slot_index+1))
 	if slot.item != null:
 		slot.item.set_item(item_name, item_quantity, slot)
 	else:
@@ -202,4 +203,3 @@ func close_inv():
 
 	
 	
-
