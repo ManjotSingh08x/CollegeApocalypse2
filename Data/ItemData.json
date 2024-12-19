@@ -1,0 +1,20 @@
+{
+	"Stick": {
+		"ItemCategory": "Resource",
+		"StackSize": 99,
+		"Description": "A sturdy tree branch that can be used for crafting"
+	},
+	"Apple": {
+		"ItemCategory": "Consumable",
+		"AddHealth": 5,
+		"StackSize": 99,
+		"Description": "A ripe and tasty apple"
+	},
+	"Sword": {
+		"ItemCategory": "Weapon",
+		"ItemAttack": 10,
+		"ItemSpeed": 0.75,
+		"StackSize": 1,
+		"Description": "Pretty rusty but gets the job done"
+	}
+}

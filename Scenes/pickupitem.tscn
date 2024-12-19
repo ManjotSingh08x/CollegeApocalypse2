@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b34c6517y3wqh"]
+
+[ext_resource type="Script" path="res://Scenes/pickup.tres.gd" id="1_4d0gx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hfmiu"]
+
+[node name="PickUpItem" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_4d0gx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hfmiu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,14 @@
+ProgressBar
+Camera2D
+TileMap
+CanvasLayer
+CollisionShape2D
+Area2D
+Control
+Panel
+GridContainer
+TextureRect
+StaticBody2D
+CharacterBody2D
+AnimationPlayer
+Label

@@ -1,0 +1,229 @@
+[gd_scene load_steps=20 format=3 uid="uid://b87405xhmxpyr"]
+
+[ext_resource type="Texture2D" uid="uid://cccvlj0biplxj" path="res://Assets/pixil-frame-0.png" id="1_r3dlo"]
+[ext_resource type="Script" path="res://Scenes/Pickupzone.gd" id="2_m4udl"]
+
+[sub_resource type="GDScript" id="GDScript_gmc5n"]
+script/source = "extends CharacterBody2D
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+const SPEED = 100.0
+
+
+func _physics_process(_delta: float) -> void:
+
+
+	var direction := Vector2(0,0)
+	
+	
+	if Input.is_action_pressed(\"move_left\"):
+		direction[0] = -1
+	if Input.is_action_just_released(\"move_left\"):
+		direction[0] = 0
+	if Input.is_action_pressed(\"move_right\"):
+		direction[0] = 1
+	if Input.is_action_just_released(\"move_right\"):
+		direction[0] = 0
+	velocity[0] = direction[0]*SPEED
+
+	if Input.is_action_pressed(\"move_up\"):
+		direction[1] = -1
+	if Input.is_action_just_released(\"move_up\"):
+		direction[1] = 0
+	if Input.is_action_pressed(\"move_down\"):
+		direction[1] = 1
+	if Input.is_action_just_released(\"move_down\"):
+		direction[1] = 0
+	velocity[1] = direction[1]*SPEED
+	
+	if Input.is_action_pressed(\"move_down\") and Input.is_action_pressed(\"move_left\"):
+		velocity = velocity /1.414
+	elif Input.is_action_pressed(\"move_right\") and Input.is_action_pressed(\"move_down\"):
+		velocity = velocity/1.414
+	if Input.is_action_pressed(\"move_up\") and Input.is_action_pressed(\"move_left\"):
+		velocity = velocity /1.414
+	elif Input.is_action_pressed(\"move_right\") and Input.is_action_pressed(\"move_up\"):
+		velocity = velocity/1.414
+	
+	if direction == Vector2(0,0):
+		animated_sprite.play(\"idle\")
+	elif direction[0]==1:
+		animated_sprite.play(\"walk_right\")
+	elif direction[0] ==-1:
+		animated_sprite.play(\"walk_left\")
+	elif direction[1] ==1:
+		animated_sprite.play(\"walk_down\")
+	elif direction[1] == -1:
+		animated_sprite.play(\"walk_up\")
+	
+	move_and_slide()
+func player():
+	pass
+	
+func _input(event):
+	if event.is_action_pressed(\"pickup\"):
+		if $Pickupzone.items_in_range.size() > 0:
+			var pickup_item = $Pickupzone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			$Pickupzone.items_in_range.erase(pickup_item)
+
+
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4thlx"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(21, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk60n"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(4, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a3dv"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(21, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58txj"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(38, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx5eu"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(157, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p21nw"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(174, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyd68"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(191, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2scf"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(106, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xh3b"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(123, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyy73"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(140, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03h6b"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(55, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ock5"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(72, 7, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n17g0"]
+atlas = ExtResource("1_r3dlo")
+region = Rect2(89, 7, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x82vw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4thlx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk60n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a3dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58txj")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx5eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p21nw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyd68")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2scf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xh3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyy73")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03h6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ock5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n17g0")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2370n"]
+size = Vector2(14, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pohpk"]
+size = Vector2(34, 34)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1775, -2714)
+collision_layer = 2
+collision_mask = 3
+script = SubResource("GDScript_gmc5n")
+metadata/_edit_vertical_guides_ = [-19.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_x82vw")
+animation = &"walk_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_2370n")
+
+[node name="Pickupzone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_m4udl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickupzone"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_pohpk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[connection signal="body_entered" from="Pickupzone" to="Pickupzone" method="_on_body_entered"]
+[connection signal="body_exited" from="Pickupzone" to="Pickupzone" method="_on_body_exited"]

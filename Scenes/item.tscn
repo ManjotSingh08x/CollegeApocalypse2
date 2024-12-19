@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqg1yonpild4y"]
+
+[ext_resource type="Script" path="res://Scripts/Item.gd" id="1_di80y"]
+[ext_resource type="Texture2D" uid="uid://o1pnxci12e7v" path="res://Assets/ItemIcons/Apple.png" id="2_bmh08"]
+
+[sub_resource type="FontFile" id="FontFile_c4abh"]
+resource_local_to_scene = true
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/9/0/kerning_overrides/9/0 = Vector2(0, 0)
+cache/0/9/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/9/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Item" type="Node2D"]
+z_index = 1
+script = ExtResource("1_di80y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bmh08")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 12.0
+offset_bottom = 12.0
+theme_override_fonts/font = SubResource("FontFile_c4abh")
+theme_override_font_sizes/font_size = 9
+text = "99"

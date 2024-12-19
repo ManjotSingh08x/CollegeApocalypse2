@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmnnutahp4r5v"]
+
+[ext_resource type="Texture2D" uid="uid://dtyei722mgb0x" path="res://Assets/Chest/default_chest.png" id="1_5t7ps"]
+[ext_resource type="Script" path="res://Scenes/chest.gd" id="1_p3o0p"]
+[ext_resource type="Texture2D" uid="uid://b46xkpdowosh6" path="res://Assets/InventoryAssets/chest_inv.png" id="3_ow21c"]
+[ext_resource type="Script" path="res://Scenes/Chest_inv.gd" id="3_ri4kt"]
+[ext_resource type="Script" path="res://Scripts/slot.gd" id="4_7c56v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwr1o"]
+size = Vector2(15, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phupq"]
+radius = 27.0185
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_p3o0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 8)
+shape = SubResource("RectangleShape2D_vwr1o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_5t7ps")
+
+[node name="Inventory" type="Area2D" parent="."]
+visible = false
+z_index = 5
+z_as_relative = false
+script = ExtResource("3_ri4kt")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory"]
+offset_left = -34.0
+offset_top = -59.0
+offset_right = 40.0
+offset_bottom = -2.0
+texture = ExtResource("3_ow21c")
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+offset_left = -5.0
+offset_top = -46.0
+offset_right = 35.0
+offset_bottom = -6.0
+columns = 2
+
+[node name="Slot1" type="Panel" parent="Inventory/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+script = ExtResource("4_7c56v")
+
+[node name="Slot2" type="Panel" parent="Inventory/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+script = ExtResource("4_7c56v")
+
+[node name="Slot3" type="Panel" parent="Inventory/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+script = ExtResource("4_7c56v")
+
+[node name="Slot4" type="Panel" parent="Inventory/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+script = ExtResource("4_7c56v")
+
+[node name="InteractiveZone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractiveZone"]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_phupq")
+
+[connection signal="body_entered" from="InteractiveZone" to="." method="_on_interactive_zone_body_entered"]
+[connection signal="body_exited" from="InteractiveZone" to="." method="_on_interactive_zone_body_exited"]
