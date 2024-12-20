@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmnnutahp4r5v"]
 
 [ext_resource type="Texture2D" uid="uid://dtyei722mgb0x" path="res://Assets/Chest/default_chest.png" id="1_5t7ps"]
-[ext_resource type="Script" path="res://Scenes/chest.gd" id="1_p3o0p"]
+[ext_resource type="Script" path="res://Scripts/chest.gd" id="1_p3o0p"]
 [ext_resource type="Texture2D" uid="uid://b46xkpdowosh6" path="res://Assets/InventoryAssets/chest_inv.png" id="3_ow21c"]
-[ext_resource type="Script" path="res://Scenes/Chest_inv.gd" id="3_ri4kt"]
+[ext_resource type="Script" path="res://Scripts/Chest_inv.gd" id="3_ri4kt"]
 [ext_resource type="Script" path="res://Scripts/slot.gd" id="4_7c56v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwr1o"]
