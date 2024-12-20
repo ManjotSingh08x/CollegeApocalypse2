@@ -3,9 +3,11 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 100.0
 
+
+
 func _physics_process(_delta: float) -> void:
 
-
+	
 	var direction := Vector2(0,0)
 	
 	
@@ -50,7 +52,6 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite.play("walk_up")
 	
 	move_and_slide()
+
 func player():
 	pass
-
-

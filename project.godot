@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 JsonData="*res://Scripts/jsondata.gd"
 InHand="*res://Scripts/player_inv.gd"
+global="*res://Scripts/global.gd"
 
 [dotnet]
 

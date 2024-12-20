@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://b87405xhmxpyr"]
 
 [ext_resource type="Texture2D" uid="uid://cccvlj0biplxj" path="res://Assets/pixil-frame-0.png" id="1_r3dlo"]
-[ext_resource type="Script" path="res://Scenes/Pickupzone.gd" id="2_m4udl"]
+[ext_resource type="Script" path="res://Scripts/Pickupzone.gd" id="2_m4udl"]
 
 [sub_resource type="GDScript" id="GDScript_gmc5n"]
 script/source = "extends CharacterBody2D
@@ -9,6 +9,7 @@ script/source = "extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 100.0
 
+var pos = Vector2(0,0)
 
 func _physics_process(_delta: float) -> void:
 
@@ -57,6 +58,9 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite.play(\"walk_up\")
 	
 	move_and_slide()
+	pos = position
+
+
 func player():
 	pass
 	
@@ -66,8 +70,6 @@ func _input(event):
 			var pickup_item = $Pickupzone.items_in_range.values()[0]
 			pickup_item.pick_up_item(self)
 			$Pickupzone.items_in_range.erase(pickup_item)
-
-
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4thlx"]
@@ -196,7 +198,7 @@ size = Vector2(14, 17)
 size = Vector2(34, 34)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(1775, -2714)
+position = Vector2(2, -1)
 collision_layer = 2
 collision_mask = 3
 script = SubResource("GDScript_gmc5n")
