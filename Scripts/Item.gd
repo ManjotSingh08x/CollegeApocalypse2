@@ -4,6 +4,7 @@ var item_name
 var item_quantity
 var parent_slot = null
 
+
 # Called when the node enters the scene tree for the first time.
 	
 		

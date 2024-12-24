@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b87405xhmxpyr"]
+[gd_scene load_steps=22 format=3 uid="uid://b87405xhmxpyr"]
 
 [ext_resource type="Texture2D" uid="uid://cccvlj0biplxj" path="res://Assets/pixil-frame-0.png" id="1_r3dlo"]
 [ext_resource type="Script" path="res://Scripts/Pickupzone.gd" id="2_m4udl"]
+[ext_resource type="PackedScene" uid="uid://d0na55uvkxm4m" path="res://Scenes/inventory.tscn" id="3_fgwp3"]
+[ext_resource type="PackedScene" uid="uid://cmq2f12e12k0d" path="res://Scenes/user_interface.tscn" id="4_ciigj"]
 
 [sub_resource type="GDScript" id="GDScript_gmc5n"]
 script/source = "extends CharacterBody2D
@@ -225,7 +227,15 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_pohpk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(5, 5)
+
+[node name="Inventory" parent="." instance=ExtResource("3_fgwp3")]
+visible = false
+z_index = 5
+z_as_relative = false
+position = Vector2(2, 2)
+
+[node name="User_Interface" parent="." instance=ExtResource("4_ciigj")]
 
 [connection signal="body_entered" from="Pickupzone" to="Pickupzone" method="_on_body_entered"]
 [connection signal="body_exited" from="Pickupzone" to="Pickupzone" method="_on_body_exited"]
