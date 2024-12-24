@@ -1,3 +1,6 @@
 res://Scenes/SingleRoom.tscn
 res://Scripts/Chest_inv.gd
 res://Scripts/inventory.gd
+res://Scenes/user_interface.tscn
+res://Scripts/User_Interface.gd
+res://Scenes/player.tscn

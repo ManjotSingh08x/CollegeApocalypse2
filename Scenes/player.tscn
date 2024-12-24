@@ -225,7 +225,7 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_pohpk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(5, 5)
 
 [connection signal="body_entered" from="Pickupzone" to="Pickupzone" method="_on_body_entered"]
 [connection signal="body_exited" from="Pickupzone" to="Pickupzone" method="_on_body_exited"]
