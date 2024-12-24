@@ -1,6 +1,6 @@
-Label
 TextureRect
 Area2D
+Label
 CanvasLayer
 CanvasGroup
 CollisionShape2D
@@ -12,4 +12,3 @@ Camera2D
 TileMap
 Control
 Panel
-GridContainer

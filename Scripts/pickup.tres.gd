@@ -7,7 +7,9 @@ var player = null
 @onready var inventory = $"../Player/Inventory"
 
 @export var sprite_texture: Texture2D
-@export_enum("Stick", "Apple", "Sword") var item_name: String
+@export_enum("Stick", "Apple", "Sword", "Coin") var item_name: String
+@export var coins: int = 0
+
 
 func _ready():
 	$Sprite2D.texture = sprite_texture
@@ -28,10 +30,16 @@ func _physics_process(delta):
 		
 		var distance = global_position.distance_to(player.global_position)
 		if distance < 10:
-			inventory.add_item(item_name, 1)
+			if item_name == "Coin":
+				InHand.add_coins(coins)
+			else:
+				inventory.add_item(item_name, 1)
 			queue_free()
 	move_and_slide()
 
 func pick_up_item(body):
 	player = body
 	being_picked_up = true
+	
+		
+		

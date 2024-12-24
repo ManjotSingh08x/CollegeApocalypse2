@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://blxnem8xqgucg"]
+[gd_scene load_steps=13 format=3 uid="uid://blxnem8xqgucg"]
 
 [ext_resource type="Texture2D" uid="uid://cyobw0e83skny" path="res://Assets/furniture/bedFinal2.png" id="1_ulanl"]
 [ext_resource type="Texture2D" uid="uid://cj64ctjjdew7s" path="res://Assets/furniture/Interiors_free_16x16.png" id="2_ciy74"]
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="3_nl23l"]
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="4_yotnd"]
 [ext_resource type="Script" path="res://Scripts/double_room_to_coridoor.gd" id="5_w0xmm"]
+[ext_resource type="PackedScene" uid="uid://b34c6517y3wqh" path="res://Scenes/pickupitem.tscn" id="6_2pj44"]
+[ext_resource type="Texture2D" uid="uid://c1iv6q3wt6hu" path="res://Assets/ItemIcons/coin_pickup.png" id="7_4x2nd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bekgp"]
 texture = ExtResource("1_ulanl")
@@ -1420,6 +1422,7 @@ layer_1/name = "furnitureL"
 layer_1/tile_data = PackedInt32Array(131078, 0, 0, 131072, 0, 0, -262142, 458753, 51, -262140, 458753, 48, 196610, 65537, 36, 196612, 131073, 36, -196600, 458753, 35, -131074, 458753, 268435491)
 
 [node name="Player" parent="." instance=ExtResource("4_yotnd")]
+z_index = 2
 position = Vector2(-42, 42)
 
 [node name="double_room_to_coridoor" type="Area2D" parent="."]
@@ -1429,6 +1432,12 @@ script = ExtResource("5_w0xmm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="double_room_to_coridoor"]
 position = Vector2(-51, 47)
 shape = SubResource("RectangleShape2D_dkju4")
+
+[node name="PickUpItem" parent="." instance=ExtResource("6_2pj44")]
+position = Vector2(31, -14)
+sprite_texture = ExtResource("7_4x2nd")
+item_name = "Coin"
+coins = 10
 
 [connection signal="body_entered" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_entered"]
 [connection signal="body_exited" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_exited"]

@@ -1,6 +1,13 @@
-res://Scenes/SingleRoom.tscn
-res://Scripts/Chest_inv.gd
-res://Scripts/inventory.gd
 res://Scenes/user_interface.tscn
-res://Scripts/User_Interface.gd
+res://Scenes/SingleRoom.tscn
 res://Scenes/player.tscn
+res://Scenes/chest.tscn
+res://Scripts/player_inv.gd
+res://Scripts/User_Interface.gd
+res://Scenes/pickupitem.tscn
+res://Scripts/Item.gd
+res://Scripts/pickup.tres.gd
+res://Scenes/item.tscn
+res://Scenes/double_room.tscn
+res://Scripts/chest.gd
+res://Scenes/chest_icon.gd

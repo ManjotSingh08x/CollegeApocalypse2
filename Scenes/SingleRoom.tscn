@@ -1,8 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://devbd13m6tcpx"]
+[gd_scene load_steps=20 format=3 uid="uid://devbd13m6tcpx"]
 
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="1_2nsby"]
-[ext_resource type="PackedScene" uid="uid://d0na55uvkxm4m" path="res://Scenes/inventory.tscn" id="2_3vawc"]
-[ext_resource type="PackedScene" uid="uid://cmq2f12e12k0d" path="res://Scenes/user_interface.tscn" id="3_dd5js"]
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="3_mnbmk"]
 [ext_resource type="Texture2D" uid="uid://cj64ctjjdew7s" path="res://Assets/furniture/Interiors_free_16x16.png" id="4_wopa5"]
 [ext_resource type="Texture2D" uid="uid://cyobw0e83skny" path="res://Assets/furniture/bedFinal2.png" id="5_mifer"]
@@ -10,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b34c6517y3wqh" path="res://Scenes/pickupitem.tscn" id="7_cl2b4"]
 [ext_resource type="Texture2D" uid="uid://c7qk26gp4o22c" path="res://Assets/ItemIcons/Stick.png" id="8_i82kr"]
 [ext_resource type="Texture2D" uid="uid://o1pnxci12e7v" path="res://Assets/ItemIcons/Apple.png" id="9_hxv5u"]
+[ext_resource type="Texture2D" uid="uid://c1iv6q3wt6hu" path="res://Assets/ItemIcons/coin_pickup.png" id="10_m38f4"]
 [ext_resource type="PackedScene" uid="uid://dmnnutahp4r5v" path="res://Scenes/chest.tscn" id="11_ja6m8"]
 [ext_resource type="PackedScene" uid="uid://b8oqjwsw8p4eo" path="res://Scenes/door.tscn" id="12_ohaef"]
 [ext_resource type="Script" path="res://Scenes/door.gd" id="13_3vc1p"]
@@ -1455,14 +1454,6 @@ z_index = 2
 texture_filter = 1
 position = Vector2(-23, -1171)
 
-[node name="Inventory" parent="Player" instance=ExtResource("2_3vawc")]
-visible = false
-z_index = 5
-z_as_relative = false
-position = Vector2(2, 2)
-
-[node name="User_Interface" parent="Player" instance=ExtResource("3_dd5js")]
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_fc1bd")
@@ -1477,10 +1468,11 @@ position = Vector2(44, -1222)
 sprite_texture = ExtResource("8_i82kr")
 item_name = "Stick"
 
-[node name="Stick2" parent="." instance=ExtResource("7_cl2b4")]
-position = Vector2(-4, -1218)
-sprite_texture = ExtResource("8_i82kr")
-item_name = "Stick"
+[node name="Coin" parent="." instance=ExtResource("7_cl2b4")]
+position = Vector2(-4, -1220)
+sprite_texture = ExtResource("10_m38f4")
+item_name = "Coin"
+coins = 5
 
 [node name="Apple" parent="." instance=ExtResource("7_cl2b4")]
 position = Vector2(28, -1175)

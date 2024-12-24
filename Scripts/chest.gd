@@ -5,11 +5,14 @@ const HIGHLIGHTED_CHEST = preload("res://Assets/Chest/highlighted_chest.png")
 const OPEN_CHEST = preload("res://Assets/Chest/open_chest.png")
 @onready var texture_rect = $TextureRect
 @onready var inventory = $Inventory
+@onready var chest_icon: Area2D = $Inventory/ChestIcon
 
+@export var coins_present = 10
 
 var interactable = false
 
 func _ready():
+	chest_icon.coins = coins_present
 	texture_rect.texture = DEFAULT_CHEST
 	interactable = false
 	
