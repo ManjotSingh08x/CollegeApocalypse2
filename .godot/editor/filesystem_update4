@@ -1,29 +1,3 @@
-<<<<<<< Updated upstream
-res://Scenes/player.tscn
-res://Scenes/pickup.tres.gd
-res://Scenes/inventory.tscn
-res://Scenes/pickupitem.tscn
-res://Scenes/item.tscn
-res://Scenes/chest.tscn
-res://Scenes/coridoor.tscn
-=======
->>>>>>> Stashed changes
 res://Scenes/SingleRoom.tscn
-res://Scenes/pickup.tres.gd
-res://Scenes/player.tscn
-res://Scenes/pickupitem.tscn
-res://Scenes/inventory.tscn
-res://Scenes/chest.tscn
-res://Scenes/item.tscn
-res://Scenes/coridoor.tscn
-res://Scenes/double_room.tscn
-res://Scenes/HealthBar.tscn
-res://Scripts/global.gd
-res://Scenes/door.tscn
-res://Scripts/single_room.gd
-res://Scripts/player.gd
-res://Scripts/door.gd
-res://Scenes/door.gd
-res://Scripts/coridor_door.gd
-res://Scripts/door_to_double_room.gd
-res://Scripts/double_room_to_coridoor.gd
+res://Scripts/Chest_inv.gd
+res://Scripts/inventory.gd

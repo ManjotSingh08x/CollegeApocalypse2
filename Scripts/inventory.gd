@@ -153,7 +153,7 @@ func left_click_same_item(slot):
 		add_item_quantity(slot, able_to_add)
 		slot.item.add_item_quantity(able_to_add)
 		InHand.holding_item.decrease_item_quantity(able_to_add)
-		InHand.holding_item = holding_item
+		#InHand.holding_item = holding_item
 		
 func left_click_not_holding(slot: SlotClass):
 	remove_item(slot)
