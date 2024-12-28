@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b68ks5fc7g5ln"]
 
-[ext_resource type="Script" path="res://Scenes/health_bar.gd" id="1_cwdfp"]
+[ext_resource type="Script" path="res://Scripts/health_bar.gd" id="1_4i6ns"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3cw3"]
 
@@ -19,13 +19,13 @@ bg_color = Color(0.899911, 0.23955, 0, 1)
 
 [node name="HealthBar" type="ProgressBar"]
 z_index = 1
-offset_right = 128.0
-offset_bottom = 8.0
+offset_right = 41.0
+offset_bottom = 5.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_f3cw3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tuwbb")
 value = 45.0
 show_percentage = false
-script = ExtResource("1_cwdfp")
+script = ExtResource("1_4i6ns")
 
 [node name="damageBar" type="ProgressBar" parent="."]
 z_index = -1
@@ -41,3 +41,5 @@ value = 70.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxdudjo24nf2a"]
+[gd_scene load_steps=12 format=3 uid="uid://dxdudjo24nf2a"]
 
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="1_fyipr"]
 [ext_resource type="Texture2D" uid="uid://pqgv1lba81rl" path="res://Assets/furniture/doorCompiled.png" id="2_cm4r8"]
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="3_e8de5"]
 [ext_resource type="Script" path="res://Scripts/coridor_door.gd" id="4_ntdwb"]
 [ext_resource type="Script" path="res://Scripts/door_to_double_room.gd" id="5_3xbw4"]
+[ext_resource type="PackedScene" uid="uid://xtwwff01xo2o" path="res://Scenes/zombie.tscn" id="6_2o3k8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehdin"]
 texture = ExtResource("1_fyipr")
@@ -312,7 +313,7 @@ radius = 8.0
 height = 34.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffxoy"]
-size = Vector2(16, 16)
+size = Vector2(12, 16)
 
 [node name="Coridoor" type="Node2D"]
 
@@ -347,8 +348,17 @@ collision_mask = 3
 script = ExtResource("5_3xbw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_to_double_room"]
-position = Vector2(-208, 424)
+position = Vector2(-207, 424)
 shape = SubResource("RectangleShape2D_ffxoy")
+
+[node name="zombie" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
+position = Vector2(204, 14)
+
+[node name="zombie2" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
+position = Vector2(-156, 18)
+
+[node name="zombie3" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
+position = Vector2(-136, 248)
 
 [connection signal="body_entered" from="coridor_door" to="coridor_door" method="_on_body_entered"]
 [connection signal="body_exited" from="coridor_door" to="coridor_door" method="_on_body_exited"]

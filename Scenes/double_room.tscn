@@ -1410,6 +1410,7 @@ sources/1 = SubResource("TileSetAtlasSource_b4h48")
 sources/2 = SubResource("TileSetAtlasSource_bvw7o")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkju4"]
+size = Vector2(11, 20)
 
 [node name="DoubleRoom" type="Node2D"]
 
@@ -1430,7 +1431,7 @@ collision_mask = 3
 script = ExtResource("5_w0xmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="double_room_to_coridoor"]
-position = Vector2(-51, 47)
+position = Vector2(-50.5, 47)
 shape = SubResource("RectangleShape2D_dkju4")
 
 [node name="PickUpItem" parent="." instance=ExtResource("6_2pj44")]
