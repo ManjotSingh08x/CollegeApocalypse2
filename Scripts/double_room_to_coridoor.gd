@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func change_scene():
 	if global.transition_scene4 == true:
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_pressed("move_left"):
 			get_tree().change_scene_to_file("res://Scenes/coridoor.tscn")
 			global.finish_transition()
 
