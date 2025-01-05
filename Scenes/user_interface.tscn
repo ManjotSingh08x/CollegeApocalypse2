@@ -1,12 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmq2f12e12k0d"]
+[gd_scene load_steps=7 format=3 uid="uid://cmq2f12e12k0d"]
 
 [ext_resource type="Script" path="res://Scripts/User_Interface.gd" id="1_ka3ht"]
+[ext_resource type="PackedScene" uid="uid://b68ks5fc7g5ln" path="res://Scenes/HealthBar.tscn" id="2_6d26k"]
 [ext_resource type="Texture2D" uid="uid://cfykkl6i03jf8" path="res://Assets/InventoryAssets/coin_counter.png" id="2_kjcfd"]
+[ext_resource type="Texture2D" uid="uid://d3350y7gbrmiv" path="res://Assets/InventoryAssets/health-bar-exterior.png" id="3_bbysa"]
 [ext_resource type="FontFile" uid="uid://b0fj14w6xvshv" path="res://Assets/fonts/PixelOperator8.ttf" id="3_yslrl"]
 [ext_resource type="Texture2D" uid="uid://bycrnkhlvhk0s" path="res://Assets/InventoryAssets/coin_icon.png" id="4_7i7g1"]
 
 [node name="User_Interface" type="CanvasLayer"]
 script = ExtResource("1_ka3ht")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_6d26k")]
+offset_left = 311.0
+offset_top = 90.0
+offset_right = 357.0
+offset_bottom = 95.0
+scale = Vector2(11.9811, 4.73038)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HealthBar"]
+z_index = -2
+layout_mode = 0
+offset_left = -3.0882
+offset_top = -3.80519
+offset_right = 148.912
+offset_bottom = 12.1948
+scale = Vector2(0.343399, 0.805866)
+texture = ExtResource("3_bbysa")
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="CoinCounter" type="TextureRect" parent="."]
 offset_left = 56.0

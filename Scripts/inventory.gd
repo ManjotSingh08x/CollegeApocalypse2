@@ -61,12 +61,11 @@ func _ready():
 		slots[i].gui_input.connect(slot_gui_input.bind(slots[i]))
 	initialize_inventory()
 	
+	
 func _on_clear_holding_item():
-
 	remove_child(holding_item)
 	holding_item = null
 	
-
 	
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
@@ -196,6 +195,7 @@ func right_click_holding(slot: SlotClass):
 			slot.item.add_item_quantity(-1)
 			InHand.prev_inv.holding_item.set_item(InHand.prev_inv.holding_item.item_name, InHand.prev_inv.holding_item.item_quantity+1,slot)
 		
+
 func close_inv():
 	pass
 	#TODO: if the player has any item in the hand, put it in an empty slot

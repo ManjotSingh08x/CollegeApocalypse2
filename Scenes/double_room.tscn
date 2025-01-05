@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://blxnem8xqgucg"]
+[gd_scene load_steps=15 format=3 uid="uid://blxnem8xqgucg"]
 
+[ext_resource type="Script" path="res://Scenes/DoubleRoom.gd" id="1_kd2mk"]
 [ext_resource type="Texture2D" uid="uid://cyobw0e83skny" path="res://Assets/furniture/bedFinal2.png" id="1_ulanl"]
 [ext_resource type="Texture2D" uid="uid://cj64ctjjdew7s" path="res://Assets/furniture/Interiors_free_16x16.png" id="2_ciy74"]
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="3_nl23l"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/double_room_to_coridoor.gd" id="5_w0xmm"]
 [ext_resource type="PackedScene" uid="uid://b34c6517y3wqh" path="res://Scenes/pickupitem.tscn" id="6_2pj44"]
 [ext_resource type="Texture2D" uid="uid://c1iv6q3wt6hu" path="res://Assets/ItemIcons/coin_pickup.png" id="7_4x2nd"]
+[ext_resource type="Script" path="res://Scripts/DataManaging/single_room_data.gd" id="9_eav04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bekgp"]
 texture = ExtResource("1_ulanl")
@@ -1413,6 +1415,7 @@ sources/2 = SubResource("TileSetAtlasSource_bvw7o")
 size = Vector2(11, 20)
 
 [node name="DoubleRoom" type="Node2D"]
+script = ExtResource("1_kd2mk")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_vhpbc")
@@ -1439,6 +1442,9 @@ position = Vector2(31, -14)
 sprite_texture = ExtResource("7_4x2nd")
 item_name = "Coin"
 coins = 10
+
+[node name="LoadSave" type="Node2D" parent="."]
+script = ExtResource("9_eav04")
 
 [connection signal="body_entered" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_entered"]
 [connection signal="body_exited" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_exited"]
