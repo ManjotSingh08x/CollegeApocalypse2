@@ -1,16 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://b87405xhmxpyr"]
+[gd_scene load_steps=23 format=3 uid="uid://b87405xhmxpyr"]
 
 [ext_resource type="Texture2D" uid="uid://cccvlj0biplxj" path="res://Assets/pixil-frame-0.png" id="1_r3dlo"]
 [ext_resource type="Script" path="res://Scripts/Pickupzone.gd" id="2_m4udl"]
 [ext_resource type="PackedScene" uid="uid://d0na55uvkxm4m" path="res://Scenes/inventory.tscn" id="3_fgwp3"]
 [ext_resource type="PackedScene" uid="uid://cmq2f12e12k0d" path="res://Scenes/user_interface.tscn" id="4_ciigj"]
-[ext_resource type="PackedScene" uid="uid://b68ks5fc7g5ln" path="res://Scenes/HealthBar.tscn" id="5_vbkt2"]
 
 [sub_resource type="GDScript" id="GDScript_gmc5n"]
 script/source = "extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var health_bar: ProgressBar = $HealthBar
+@onready var health_bar: ProgressBar = $User_Interface/HealthBar
 
 const SPEED = 100.0
 
@@ -106,7 +105,7 @@ func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown==true:
 		p_health = p_health - 10
 		enemy_attack_cooldown = false
-		$HealthBar/Timer.start()
+		health_bar.timer.start()
 		$attack_cooldown.start()
 		print(p_health)
 
@@ -126,16 +125,13 @@ func _on_deal_attack_timer_timeout() -> void:
 	player_ip= false
 	
 func update_heathbar():
-	var healthbar = $HealthBar
-	var damagebar = $HealthBar/damageBar
-	
-	healthbar.value = p_health
+	health_bar.value = p_health
 	
 	if p_health>=100:
-		damagebar.value = 100
-		healthbar.visible = false
+		health_bar.damage_bar.value = 100
+		health_bar.visible = false
 	else:
-		healthbar.visible = true
+		health_bar.visible = true
 
 
 func _on_timer_timeout() -> void:
@@ -321,12 +317,6 @@ shape = SubResource("CircleShape2D_24vkv")
 
 [node name="attack_cooldown" type="Timer" parent="."]
 wait_time = 0.5
-
-[node name="HealthBar" parent="." instance=ExtResource("5_vbkt2")]
-offset_left = -19.0
-offset_top = -20.0
-offset_right = 22.0
-offset_bottom = -15.0
 
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.3

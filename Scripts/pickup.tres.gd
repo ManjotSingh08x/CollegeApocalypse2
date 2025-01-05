@@ -41,5 +41,7 @@ func pick_up_item(body):
 	player = body
 	being_picked_up = true
 	
+func pickup():
+	pass
 		
 		

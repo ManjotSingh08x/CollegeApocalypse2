@@ -7,13 +7,15 @@ const ItemClass = preload("res://Scenes/item.tscn")
 @onready var inventory_slots = $GridContainer
 var holding_item = null
 var NUM_INVENTORY_SLOTS = 4
+var test = true
 var inventory = {
 	0: ["Sword", 1], #----> slot_index: [item_name, item_quantitiy]
 	1: ["Apple", 75],
 	2: ["Apple", 45],
 	3: ["Stick", 3],
 }
-
+func _process(delta: float) -> void:
+	print(inventory)
 	
 func _on_clear_holding_item():
 	remove_child(holding_item)
@@ -26,7 +28,8 @@ func _ready():
 	for i in range(slots.size()):
 		slots[i].slot_index = i
 		slots[i].gui_input.connect(slot_gui_input.bind(slots[i]))
-	load_from_json()
+	load_from_json(inventory)
+	print("chest was loaded")
 
 func add_item(item_name, item_quantity):
 	for item in inventory:
@@ -42,6 +45,7 @@ func add_item(item_name, item_quantity):
 				item_quantity -= able_to_add
 				
 	for i in range(NUM_INVENTORY_SLOTS):
+		print("updating slot visual")
 		if inventory.has(i) == false:
 			inventory[i] = [item_name, item_quantity]
 			update_slot_visual(i, inventory[i][0], inventory[i][1])
@@ -216,25 +220,32 @@ func close():
 func close_inv():
 	pass
 	#TODO: if the player has any item in the hand, put it in an empty slot
-
 	
-	
-func load_from_json():
+func load_from_json(json):
 	#TODO: create functionality to load from json file
+	#print("loaded from json")
+	#print(inventory)
+	#print(json)
+	#clear_inv()
+	if json != inventory:
+		clear_inv()
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
-		if inventory.has(i):
-			slots[i].initialize_item(inventory[i][0], inventory[i][1])
-	
-func save_to_json():
+		if json.has(i):
+			slots[i].initialize_item(json[i][0], json[i][1])
+		else:
+			remove_item(slots[i])
+	inventory = json
+
+func output_json():
 	#TODO: create functionality to save to json, if the file is empty, 
-	#fill it with default items
-	#add a seperate entry in the dictionary for the state of the chest
-	pass
+	return inventory
 	
-func reset():
-	#TODO: add a button to fill the chest to resetthe contents
-	pass
+func clear_inv():
+	for slot in inventory_slots.get_children():
+		remove_item(slot)
+		slot.remove_item()
+		
 	
 func close_chest():
 	#TODO: save the state and close the invnetory system. change the textures and if player has item in hand, put it in an empty slot

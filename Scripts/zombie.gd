@@ -8,7 +8,7 @@ var player = null
 
 var health = 100
 var player_inattack_zone = false
-var can_take_damage = true
+var can_take_damage = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -58,17 +58,17 @@ func _physics_process(delta: float) -> void:
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	player = body
+	can_take_damage = true
 	player_chase = true
 
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	player = null
+	can_take_damage = false
 	player_chase = false
 	
 func zombie():
 	pass
-
-
 
 
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
@@ -87,7 +87,7 @@ func deal_with_damage():
 			can_take_damage = false
 			print("Slime health:" , health)
 			if health<=0:
-				self.queue_free()
+				queue_free()
 
 
 func _on_take_damage_cooldown_timeout() -> void:
@@ -105,3 +105,4 @@ func update_zombie_heathbar():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
+		

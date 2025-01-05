@@ -1,6 +1,7 @@
 extends ProgressBar
 
 @onready var damage_bar: ProgressBar = $damageBar
+@onready var timer: Timer = $Timer
 
 
 # Called when the node enters the scene tree for the first time.

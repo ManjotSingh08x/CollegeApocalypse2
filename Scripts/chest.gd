@@ -33,3 +33,5 @@ func _on_interactive_zone_body_exited(body):
 	interactable = false
 	inventory.close()
 	
+func chest(): pass
+	
