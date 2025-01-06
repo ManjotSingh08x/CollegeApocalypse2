@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dmnnutahp4r5v" path="res://Scenes/chest.tscn" id="11_ja6m8"]
 [ext_resource type="PackedScene" uid="uid://b8oqjwsw8p4eo" path="res://Scenes/door.tscn" id="12_ohaef"]
 [ext_resource type="Script" path="res://Scenes/door.gd" id="13_3vc1p"]
-[ext_resource type="Script" path="res://Scripts/DataManaging/single_room_data.gd" id="13_50bed"]
+[ext_resource type="PackedScene" uid="uid://bi4k2uc3rwlt4" path="res://Scripts/DataManaging/load_save.tscn" id="13_powne"]
 
 [sub_resource type="GDScript" id="GDScript_no6rg"]
 script/source = "extends Node2D
@@ -22,7 +22,6 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_save.load_level()
-	self.name = \"SingleRoom\"
 	pass # Replace with function body.
 	
 func _exit_tree() -> void:
@@ -1487,7 +1486,7 @@ sprite_texture = ExtResource("9_hxv5u")
 item_name = "Apple"
 
 [node name="Chest" parent="." instance=ExtResource("11_ja6m8")]
-position = Vector2(-69, -1213)
+position = Vector2(-61, -1212)
 
 [node name="door" parent="." instance=ExtResource("12_ohaef")]
 position = Vector2(40, -1126)
@@ -1498,8 +1497,7 @@ script = ExtResource("13_3vc1p")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="door"]
 shape = SubResource("CapsuleShape2D_ifng0")
 
-[node name="LoadSave" type="Node2D" parent="."]
-script = ExtResource("13_50bed")
+[node name="LoadSave" parent="." instance=ExtResource("13_powne")]
 
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="body_exited" from="door" to="door" method="_on_body_exited"]
