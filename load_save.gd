@@ -62,5 +62,3 @@ func save_pickup(saved_level: SaveLevel, child):
 func save_zombie(saved_level: SaveLevel, child):
 	print("saved ", child.name)
 	saved_level.zombie_dict[child.name] = child.global_position
-	
-	

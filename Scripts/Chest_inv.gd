@@ -14,8 +14,7 @@ var inventory = {
 	2: ["Apple", 45],
 	3: ["Stick", 3],
 }
-func _process(delta: float) -> void:
-	print(inventory)
+
 	
 func _on_clear_holding_item():
 	remove_child(holding_item)

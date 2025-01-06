@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/double_room_to_coridoor.gd" id="5_w0xmm"]
 [ext_resource type="PackedScene" uid="uid://b34c6517y3wqh" path="res://Scenes/pickupitem.tscn" id="6_2pj44"]
 [ext_resource type="Texture2D" uid="uid://c1iv6q3wt6hu" path="res://Assets/ItemIcons/coin_pickup.png" id="7_4x2nd"]
-[ext_resource type="Script" path="res://Scripts/DataManaging/single_room_data.gd" id="9_eav04"]
+[ext_resource type="PackedScene" uid="uid://bi4k2uc3rwlt4" path="res://Scripts/DataManaging/load_save.tscn" id="9_620a2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bekgp"]
 texture = ExtResource("1_ulanl")
@@ -1443,8 +1443,7 @@ sprite_texture = ExtResource("7_4x2nd")
 item_name = "Coin"
 coins = 10
 
-[node name="LoadSave" type="Node2D" parent="."]
-script = ExtResource("9_eav04")
+[node name="LoadSave" parent="." instance=ExtResource("9_620a2")]
 
 [connection signal="body_entered" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_entered"]
 [connection signal="body_exited" from="double_room_to_coridoor" to="double_room_to_coridoor" method="_on_body_exited"]

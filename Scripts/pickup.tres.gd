@@ -9,7 +9,7 @@ var player = null
 @export var sprite_texture: Texture2D
 @export_enum("Stick", "Apple", "Sword", "Coin") var item_name: String
 @export var coins: int = 0
-
+@export var quantity: int = 1
 
 func _ready():
 	$Sprite2D.texture = sprite_texture
@@ -33,7 +33,7 @@ func _physics_process(delta):
 			if item_name == "Coin":
 				InHand.add_coins(coins)
 			else:
-				inventory.add_item(item_name, 1)
+				inventory.add_item(item_name, quantity)
 			queue_free()
 	move_and_slide()
 

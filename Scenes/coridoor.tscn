@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxdudjo24nf2a"]
+[gd_scene load_steps=14 format=3 uid="uid://dxdudjo24nf2a"]
 
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="1_fyipr"]
+[ext_resource type="Script" path="res://Scenes/coridoor.gd" id="1_oa1nm"]
 [ext_resource type="Texture2D" uid="uid://pqgv1lba81rl" path="res://Assets/furniture/doorCompiled.png" id="2_cm4r8"]
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="3_e8de5"]
 [ext_resource type="Script" path="res://Scripts/coridor_door.gd" id="4_ntdwb"]
 [ext_resource type="Script" path="res://Scripts/door_to_double_room.gd" id="5_3xbw4"]
 [ext_resource type="PackedScene" uid="uid://xtwwff01xo2o" path="res://Scenes/zombie.tscn" id="6_2o3k8"]
+[ext_resource type="PackedScene" uid="uid://bi4k2uc3rwlt4" path="res://Scripts/DataManaging/load_save.tscn" id="7_o7qwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehdin"]
 texture = ExtResource("1_fyipr")
@@ -316,6 +318,7 @@ height = 34.0
 size = Vector2(12, 16)
 
 [node name="Coridoor" type="Node2D"]
+script = ExtResource("1_oa1nm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sla5t")
@@ -351,14 +354,16 @@ script = ExtResource("5_3xbw4")
 position = Vector2(-207, 424)
 shape = SubResource("RectangleShape2D_ffxoy")
 
-[node name="zombie" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
+[node name="LoadSave" parent="." instance=ExtResource("7_o7qwh")]
+
+[node name="zombie" parent="." instance=ExtResource("6_2o3k8")]
 position = Vector2(204, 14)
 
-[node name="zombie2" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
-position = Vector2(-156, 18)
-
-[node name="zombie3" parent="door_to_double_room" instance=ExtResource("6_2o3k8")]
+[node name="zombie3" parent="." instance=ExtResource("6_2o3k8")]
 position = Vector2(-136, 248)
+
+[node name="zombie2" parent="." instance=ExtResource("6_2o3k8")]
+position = Vector2(-156, 18)
 
 [connection signal="body_entered" from="coridor_door" to="coridor_door" method="_on_body_entered"]
 [connection signal="body_exited" from="coridor_door" to="coridor_door" method="_on_body_exited"]
