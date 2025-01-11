@@ -1,10 +1,12 @@
 extends Node
 @onready var room: Node2D = $".."
 var SAVE_PATH: String
+var PLAYER_PATH: String
 var children: Array[Node]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SAVE_PATH = "user://" + room.name + ".tres"
+	PLAYER_PATH = "user://Player.tres"  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("save_game"):
@@ -15,6 +17,7 @@ func _process(delta: float) -> void:
 
 func save_level():
 	var saved_level: SaveLevel = SaveLevel.new()
+	var player_data: PlayerData = PlayerData.new()
 	saved_level.level_name = room.name
 	for child in room.get_children():
 		if child.has_method("zombie"):
@@ -23,24 +26,35 @@ func save_level():
 			save_chest(saved_level, child)
 		if child.has_method("pickup"):
 			save_pickup(saved_level, child)
+		if child.has_method("player"):
+			save_player_data(player_data, child)
 
 	ResourceSaver.save(saved_level, SAVE_PATH)
+	ResourceSaver.save(player_data, PLAYER_PATH)
 	
 func load_level():
 	var saved_level: SaveLevel = ResourceLoader.load(SAVE_PATH)
+	var player_data: PlayerData = ResourceLoader.load(PLAYER_PATH)
+	if player_data == null: 
+		player_data = PlayerData.new()
+	else:
+		for child in room.get_children():
+			if child.has_method("player"):
+				load_player_data(player_data, child)
+				
 	if saved_level == null:
 		saved_level = SaveLevel.new()
 	else:
 		for child in room.get_children():
 			if child.has_method("chest"):
 				child.inventory.load_from_json(saved_level.chest_dict[child.name])
-				print('manual setting first')
 			if child.has_method('pickup'):
 				if not saved_level.pick_up_dict.has(child.name):
 					child.queue_free()
 			if child.has_method('zombie'):
 				if not saved_level.zombie_dict.has(child.name):
 					child.queue_free()
+			
 
 func check_test():
 	for child in room.get_children():
@@ -51,7 +65,6 @@ func save_chest(saved_level, child):
 	saved_level.chest_dict[child.name] = child.inventory.output_json()
 
 func save_pickup(saved_level: SaveLevel, child):
-	print("saved ", child.name)
 	saved_level.pick_up_dict[child.name] = {
 		"item_name" : child.item_name,
 		"global_position": child.global_position,
@@ -60,5 +73,12 @@ func save_pickup(saved_level: SaveLevel, child):
 	}
 	
 func save_zombie(saved_level: SaveLevel, child):
-	print("saved ", child.name)
 	saved_level.zombie_dict[child.name] = child.global_position
+	
+func save_player_data(player_data:PlayerData, player_child):
+	player_data.coins = player_child.user_interface.coins_held
+	player_data.inventory_data = player_child.inventory.inventory
+
+func load_player_data(player_data:PlayerData, player_child):
+	player_child.user_interface.load_coins(player_data.coins)
+	player_child.inventory.load_from_json(player_data.inventory_data)

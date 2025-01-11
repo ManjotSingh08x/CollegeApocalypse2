@@ -27,7 +27,6 @@ offset_bottom = 16.0
 texture = ExtResource("1_5t7ps")
 
 [node name="Inventory" type="Area2D" parent="."]
-visible = false
 z_index = 5
 z_as_relative = false
 script = ExtResource("3_ri4kt")

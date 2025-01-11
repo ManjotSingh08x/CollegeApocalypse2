@@ -15,11 +15,9 @@ var inventory = {
 	3: ["Stick", 3],
 }
 
-	
 func _on_clear_holding_item():
 	remove_child(holding_item)
 	holding_item = null
-
 
 func _ready():
 	var slots = inventory_slots.get_children()

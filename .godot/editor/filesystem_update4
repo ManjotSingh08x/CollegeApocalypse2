@@ -1,4 +1,5 @@
 res://Scenes/SingleRoom.tscn
+res://Scripts/load_save.gd
 res://Scenes/double_room.tscn
 res://Scenes/zombie.tscn
 res://Scenes/chest.tscn
@@ -6,4 +7,15 @@ res://Scenes/item.tscn
 res://Scenes/pickupitem.tscn
 res://Scripts/DataManaging/load_save.tscn
 res://Scenes/coridoor.tscn
-res://load_save.gd
+res://Scenes/player.tscn
+res://Scripts/inventory.gd
+res://Scripts/Chest_inv.gd
+res://GameData/SingleRoom.tres
+res://Scripts/pickup.tres.gd
+res://Scripts/player_inv.gd
+res://Scripts/User_Interface.gd
+res://Scripts/main_menu.gd
+res://Scenes/user_interface.tscn
+res://Scenes/main_menu.tscn
+res://Scripts/transition_manager.gd
+res://Scenes/trader.tscn
