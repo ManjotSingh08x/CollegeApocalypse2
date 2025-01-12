@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://devbd13m6tcpx"]
+[gd_scene load_steps=22 format=3 uid="uid://devbd13m6tcpx"]
 
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="1_2nsby"]
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="3_mnbmk"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b8oqjwsw8p4eo" path="res://Scenes/door.tscn" id="12_ohaef"]
 [ext_resource type="Script" path="res://Scenes/door.gd" id="13_3vc1p"]
 [ext_resource type="PackedScene" uid="uid://bi4k2uc3rwlt4" path="res://Scripts/DataManaging/load_save.tscn" id="13_powne"]
+[ext_resource type="PackedScene" uid="uid://jwaodc2cxr8e" path="res://Scenes/trader.tscn" id="14_2yova"]
 
 [sub_resource type="GDScript" id="GDScript_no6rg"]
 script/source = "extends Node2D
@@ -27,6 +28,7 @@ func _ready() -> void:
 func _exit_tree() -> void:
 	load_save.save_level()
 	pass
+# Recursive function to print the tree structure
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pj8st"]
@@ -1498,6 +1500,9 @@ script = ExtResource("13_3vc1p")
 shape = SubResource("CapsuleShape2D_ifng0")
 
 [node name="LoadSave" parent="." instance=ExtResource("13_powne")]
+
+[node name="Trader" parent="." instance=ExtResource("14_2yova")]
+position = Vector2(-3, -1250)
 
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="body_exited" from="door" to="door" method="_on_body_exited"]

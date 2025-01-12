@@ -31,7 +31,8 @@ func _physics_process(delta):
 		var distance = global_position.distance_to(player.global_position)
 		if distance < 10:
 			if item_name == "Coin":
-				InHand.add_coins(coins)
+				if player != null:
+					player.user_interface.add_coins(coins)
 			else:
 				inventory.add_item(item_name, quantity)
 			queue_free()

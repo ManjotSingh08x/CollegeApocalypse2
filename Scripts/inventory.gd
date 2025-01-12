@@ -6,6 +6,8 @@ const ItemClass = preload("res://Scenes/item.tscn")
 
 const NUM_INVENTORY_SLOTS = 12
 
+
+
 var inventory = {
 	0: ["Sword", 1], #----> slot_index: [item_name, item_quantitiy]
 	1: ["Sword", 1],
@@ -16,6 +18,9 @@ var inventory = {
 }
 
 var holding_item = null
+
+#func _process(delta: float) -> void:
+	#print(inventory)
 
 func add_item(item_name, item_quantity):
 	for item in inventory:
@@ -59,7 +64,7 @@ func _ready():
 	for i in range(slots.size()):
 		slots[i].slot_index = i
 		slots[i].gui_input.connect(slot_gui_input.bind(slots[i]))
-	initialize_inventory()
+	load_from_json(inventory)
 	
 	
 func _on_clear_holding_item():
@@ -195,11 +200,25 @@ func right_click_holding(slot: SlotClass):
 			slot.item.add_item_quantity(-1)
 			InHand.prev_inv.holding_item.set_item(InHand.prev_inv.holding_item.item_name, InHand.prev_inv.holding_item.item_quantity+1,slot)
 		
-
 func close_inv():
 	pass
 	#TODO: if the player has any item in the hand, put it in an empty slot
+	
+func clear_inv():
+	for slot in inventory_slots.get_children():
+		remove_item(slot)
+		slot.remove_item()
 		
-
+func load_from_json(json):
+	if json != inventory:
+		clear_inv()
+	var slots = inventory_slots.get_children()
+	for i in range(slots.size()):
+		if json.has(i):
+			slots[i].initialize_item(json[i][0], json[i][1])
+		else:
+			remove_item(slots[i])
+	inventory = json
+	
 	
 	

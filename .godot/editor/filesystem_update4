@@ -6,4 +6,7 @@ res://Scenes/item.tscn
 res://Scenes/pickupitem.tscn
 res://Scripts/DataManaging/load_save.tscn
 res://Scenes/coridoor.tscn
-res://load_save.gd
+res://Scenes/player.tscn
+res://Scenes/user_interface.tscn
+res://Scenes/main_menu.tscn
+res://Scenes/trader.tscn
