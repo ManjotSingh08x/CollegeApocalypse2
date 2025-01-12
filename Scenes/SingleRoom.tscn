@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1iv6q3wt6hu" path="res://Assets/ItemIcons/coin_pickup.png" id="10_m38f4"]
 [ext_resource type="PackedScene" uid="uid://dmnnutahp4r5v" path="res://Scenes/chest.tscn" id="11_ja6m8"]
 [ext_resource type="PackedScene" uid="uid://b8oqjwsw8p4eo" path="res://Scenes/door.tscn" id="12_ohaef"]
-[ext_resource type="Script" path="res://Scenes/door.gd" id="13_3vc1p"]
+[ext_resource type="Script" path="res://door.gd" id="13_3vc1p"]
 [ext_resource type="PackedScene" uid="uid://bi4k2uc3rwlt4" path="res://Scripts/DataManaging/load_save.tscn" id="13_powne"]
 [ext_resource type="PackedScene" uid="uid://jwaodc2cxr8e" path="res://Scenes/trader.tscn" id="14_2yova"]
 

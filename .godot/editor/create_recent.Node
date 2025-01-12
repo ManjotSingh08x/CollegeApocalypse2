@@ -1,9 +1,10 @@
-Button
-Area2D
-NinePatchRect
 TextureRect
 ColorRect
 Label
+Area2D
+CheckButton
+Button
+NinePatchRect
 Panel
 CollisionShape2D
 CharacterBody2D
@@ -11,4 +12,3 @@ Node2D
 VBoxContainer
 ProgressBar
 Timer
-AnimatedSprite2D

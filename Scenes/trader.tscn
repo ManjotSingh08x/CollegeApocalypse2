@@ -1,11 +1,15 @@
-[gd_scene load_steps=39 format=3 uid="uid://jwaodc2cxr8e"]
+[gd_scene load_steps=45 format=3 uid="uid://jwaodc2cxr8e"]
 
+[ext_resource type="Script" path="res://Scripts/trader.gd" id="1_aow38"]
 [ext_resource type="Texture2D" uid="uid://bjdve61cj7tqs" path="res://Assets/Entities/zombie1final without border.png" id="1_rfwfr"]
 [ext_resource type="Texture2D" uid="uid://b46xkpdowosh6" path="res://Assets/InventoryAssets/chest_inv.png" id="2_hpdyr"]
 [ext_resource type="Texture2D" uid="uid://g1v4ybfl14lg" path="res://Assets/InventoryAssets/inv_slot.png" id="3_d7opj"]
+[ext_resource type="Script" path="res://Scripts/trader_inventory.gd" id="3_g21jk"]
 [ext_resource type="Texture2D" uid="uid://c6eex726bqsxy" path="res://Assets/InventoryAssets/counter_left.png" id="4_gus4m"]
 [ext_resource type="FontFile" uid="uid://b0fj14w6xvshv" path="res://Assets/fonts/PixelOperator8.ttf" id="4_xebvj"]
 [ext_resource type="Texture2D" uid="uid://bswxuf52irndg" path="res://Assets/InventoryAssets/coin_counter_right.png" id="5_7m871"]
+[ext_resource type="Texture2D" uid="uid://b2fnfkqdk4d1w" path="res://Assets/InventoryAssets/buy_button_green.png" id="7_ltx0k"]
+[ext_resource type="Texture2D" uid="uid://bycrnkhlvhk0s" path="res://Assets/InventoryAssets/coin_icon.png" id="8_sseta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3rtm"]
 atlas = ExtResource("1_rfwfr")
@@ -228,7 +232,12 @@ radius = 79.511
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b40h"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecdei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1dvy"]
+
 [node name="Trader" type="Node2D"]
+script = ExtResource("1_aow38")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
@@ -242,6 +251,7 @@ animation = &"idle_up"
 shape = SubResource("CircleShape2D_cgpyl")
 
 [node name="TraderInventory" type="Area2D" parent="."]
+script = ExtResource("3_g21jk")
 
 [node name="BackGround" type="TextureRect" parent="TraderInventory"]
 offset_left = -44.0
@@ -314,3 +324,108 @@ layout_mode = 0
 offset_right = 24.0
 offset_bottom = 24.0
 texture = ExtResource("3_d7opj")
+
+[node name="ItemQuantity" type="Area2D" parent="TraderInventory"]
+
+[node name="Label" type="Label" parent="TraderInventory/ItemQuantity"]
+offset_left = -1.0
+offset_top = -34.0
+offset_right = 39.0
+offset_bottom = -26.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("4_xebvj")
+theme_override_font_sizes/font_size = 8
+text = "10"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="TraderInventory/ItemQuantity"]
+show_behind_parent = true
+offset_left = -2.0
+offset_top = -35.0
+offset_right = 38.0
+offset_bottom = -25.0
+scale = Vector2(0.75, 0.75)
+color = Color(0.287597, 0.360992, 0.397462, 1)
+
+[node name="Left" type="Button" parent="TraderInventory/ItemQuantity"]
+offset_left = -10.0
+offset_top = -38.0
+offset_right = 14.0
+offset_bottom = -14.0
+scale = Vector2(0.55, 0.55)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5qtyt")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_avxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2ywsx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6ipvg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_suh1t")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i2xj8")
+icon = ExtResource("4_gus4m")
+
+[node name="Right" type="Button" parent="TraderInventory/ItemQuantity"]
+offset_left = 28.0
+offset_top = -38.0
+offset_right = 52.0
+offset_bottom = -14.0
+scale = Vector2(0.55, 0.55)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ert7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_avxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2ywsx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6ipvg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_suh1t")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8b40h")
+action_mode = 0
+icon = ExtResource("5_7m871")
+
+[node name="Button" type="Button" parent="TraderInventory"]
+offset_left = -5.0
+offset_top = -27.0
+offset_right = 51.0
+offset_bottom = -3.0
+scale = Vector2(0.737877, 0.801385)
+theme_override_constants/outline_size = 0
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("4_xebvj")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ecdei")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c1dvy")
+text = "BUY"
+icon = ExtResource("7_ltx0k")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ItemCost" type="Area2D" parent="TraderInventory"]
+
+[node name="Label" type="Label" parent="TraderInventory/ItemCost"]
+offset_left = -32.0
+offset_top = -21.0
+offset_right = -4.0
+offset_bottom = -13.0
+scale = Vector2(0.791482, 0.744921)
+theme_override_fonts/font = ExtResource("4_xebvj")
+theme_override_font_sizes/font_size = 8
+text = "500"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="TraderInventory/ItemCost"]
+show_behind_parent = true
+offset_left = -32.0
+offset_top = -22.0
+offset_right = -9.0
+offset_bottom = -15.0
+color = Color(0.286275, 0.360784, 0.396078, 1)
+
+[node name="TextureRect" type="TextureRect" parent="TraderInventory/ItemCost"]
+offset_left = -41.0
+offset_top = -24.0
+offset_right = -30.0
+offset_bottom = -14.0
+texture = ExtResource("8_sseta")
+expand_mode = 1
+
+[connection signal="body_entered" from="InteractiveZone" to="." method="_on_interactive_zone_body_entered"]
+[connection signal="body_exited" from="InteractiveZone" to="." method="_on_interactive_zone_body_exited"]
+[connection signal="pressed" from="TraderInventory/ItemSwitcher/Left" to="TraderInventory" method="_on_left_switch_pressed "]
+[connection signal="pressed" from="TraderInventory/ItemSwitcher/Right" to="TraderInventory" method="_on_right_switch_pressed"]
+[connection signal="pressed" from="TraderInventory/ItemQuantity/Left" to="TraderInventory" method="_on_left_quantity_pressed"]
+[connection signal="pressed" from="TraderInventory/ItemQuantity/Right" to="TraderInventory" method="_on_right_quantity_pressed"]

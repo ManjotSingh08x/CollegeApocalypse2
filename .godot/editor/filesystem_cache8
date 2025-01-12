@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736695967
+::res://::1736705365
+door.gd::GDScript::-1::1736079797::0::1::::<>Area2D<>::
 README.md::TextFile::-1::1734636335::0::1::::<><>::
-::res://Assets/::1736070830
+::res://Assets/::1736705365
 Game Boy Advance - Pokemon FireRed LeafGreen - Overworld NPCs.png::CompressedTexture2D::2057757442698076505::1734636335::1736070830::1::::<><>::
 MC Pokemon FireRed LeafGreen - Overworld NPCs.png::CompressedTexture2D::9076517520317224327::1734636335::1736070830::1::::<><>::
 pixil-frame-0.png::CompressedTexture2D::4918643022138426907::1734636335::1736070830::1::::<><>::
@@ -20,7 +21,9 @@ bedFinal2.png::CompressedTexture2D::6486376228514967530::1734636335::1736070830:
 doorCompiled.png::CompressedTexture2D::1086265884910759197::1734636335::1736070830::1::::<><>::
 Interiors_free_16x16.png::CompressedTexture2D::5470302047142387930::1734636335::1736070830::1::::<><>::
 Room_Builder_free_16x16.png::CompressedTexture2D::7268368144358320272::1734636335::1736070830::1::::<><>::
-::res://Assets/InventoryAssets/::1736632018
+::res://Assets/InventoryAssets/::1736705360
+buy_button_green.png::CompressedTexture2D::4292640150666948734::1736699725::1736699832::1::::<><>::
+buy_button_red.png::CompressedTexture2D::3803909167855105996::1736699827::1736699832::1::::<><>::
 chest_inv.png::CompressedTexture2D::4487308001495302949::1735060883::1736070830::1::::<><>::
 coin_counter.png::CompressedTexture2D::5173956305584303647::1735053538::1736070830::1::::<><>::
 coin_counter_left.png::CompressedTexture2D::8899075881056200434::1736631977::1736632018::1::::<><>::
@@ -34,10 +37,11 @@ inv_slot.png::CompressedTexture2D::476134990653226704::1734636335::1736070830::1
 new_inv.png::CompressedTexture2D::4841142569749684314::1734636335::1736070830::1::::<><>::
 tiny_chest_inventory_empty.png::CompressedTexture2D::664517627291014296::1735060611::1736070830::1::::<><>::
 tiny_chest_inv_filled.png::CompressedTexture2D::1825673709650688166::1735060751::1736070830::1::::<><>::
-::res://Assets/ItemIcons/::1736070830
+::res://Assets/ItemIcons/::1736705365
 Apple.png::CompressedTexture2D::1037252814276225373::1734636335::1736070830::1::::<><>::
 coin_pickup.png::CompressedTexture2D::194576400738852726::1735057403::1736070830::1::::<><>::
 ironSword.png::CompressedTexture2D::2761169306383859406::1734636335::1736070830::1::::<><>::
+Key.png::CompressedTexture2D::579408201321541227::1736705217::1736705365::1::::<><>::
 Stick.png::CompressedTexture2D::7052571432444840100::1734636335::1736070830::1::::<><>::
 Sword.png::CompressedTexture2D::3248913483059961444::1734636335::1736070830::1::::<><>::
 ::res://Assets/Pixelify_Sans/::1736070830
@@ -52,30 +56,29 @@ PixelifySans-SemiBold.ttf::FontFile::2087559559884290940::1734636335::1736070830
 ::res://GameData/::1736617924
 ItemData.json::JSON::-1::1734636335::0::1::::<><>::
 SingleRoom.tres::Resource/SaveLevel::4469618746297092152::1736617924::0::1::::<><>::res://Scripts/DataManaging/save_level.gd
-::res://Scenes/::1736632702
-chest.tscn::PackedScene::8029191120605437069::1736632701::0::1::::<><>::uid://dtyei722mgb0x::::res://Assets/Chest/default_chest.png<>res://Scripts/chest.gd<>uid://b46xkpdowosh6::::res://Assets/InventoryAssets/chest_inv.png<>res://Scripts/Chest_inv.gd<>res://Scripts/slot.gd<>res://Scenes/chest_icon.gd<>uid://1amtxvm55ngw::::res://Assets/InventoryAssets/tiny_chest_inv_filled.png
-chest_icon.gd::GDScript::-1::1736073942::0::1::::<>Area2D<>::
-coridoor.gd::GDScript::-1::1736183476::0::1::::<>Node2D<>::
-coridoor.tscn::PackedScene::8781018780856712258::1736632701::0::1::::<><>::uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>res://Scenes/coridoor.gd<>uid://pqgv1lba81rl::::res://Assets/furniture/doorCompiled.png<>uid://b87405xhmxpyr::::res://Scenes/player.tscn<>res://Scripts/coridor_door.gd<>res://Scripts/door_to_double_room.gd<>uid://xtwwff01xo2o::::res://Scenes/zombie.tscn<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn
-door.gd::GDScript::-1::1736079797::0::1::::<>Area2D<>::
+::res://Scenes/::1736701044
+chest.tscn::PackedScene::8029191120605437069::1736701043::0::1::::<><>::uid://dtyei722mgb0x::::res://Assets/Chest/default_chest.png<>res://Scripts/chest.gd<>uid://b46xkpdowosh6::::res://Assets/InventoryAssets/chest_inv.png<>res://Scripts/Chest_inv.gd<>res://Scripts/slot.gd<>res://Scripts/chest_icon.gd<>uid://1amtxvm55ngw::::res://Assets/InventoryAssets/tiny_chest_inv_filled.png
+coridoor.tscn::PackedScene::8781018780856712258::1736701043::0::1::::<><>::uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>res://Scripts/coridoor.gd<>uid://pqgv1lba81rl::::res://Assets/furniture/doorCompiled.png<>uid://b87405xhmxpyr::::res://Scenes/player.tscn<>res://Scripts/coridor_door.gd<>res://Scripts/door_to_double_room.gd<>uid://xtwwff01xo2o::::res://Scenes/zombie.tscn<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn
 door.tscn::PackedScene::4732542540698898386::1734726516::0::1::::<><>::uid://pqgv1lba81rl::::res://Assets/furniture/doorCompiled.png
-DoubleRoom.gd::GDScript::-1::1736183476::0::1::::<>Node2D<>::
-double_room.tscn::PackedScene::3206775798461818346::1736632701::0::1::::<><>::res://Scenes/DoubleRoom.gd<>uid://cyobw0e83skny::::res://Assets/furniture/bedFinal2.png<>uid://cj64ctjjdew7s::::res://Assets/furniture/Interiors_free_16x16.png<>uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>uid://b87405xhmxpyr::::res://Scenes/player.tscn<>res://Scripts/double_room_to_coridoor.gd<>uid://b34c6517y3wqh::::res://Scenes/pickupitem.tscn<>uid://c1iv6q3wt6hu::::res://Assets/ItemIcons/coin_pickup.png<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn
+double_room.tscn::PackedScene::3206775798461818346::1736701043::0::1::::<><>::res://Scripts/DoubleRoom.gd<>uid://cyobw0e83skny::::res://Assets/furniture/bedFinal2.png<>uid://cj64ctjjdew7s::::res://Assets/furniture/Interiors_free_16x16.png<>uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>uid://b87405xhmxpyr::::res://Scenes/player.tscn<>res://Scripts/double_room_to_coridoor.gd<>uid://b34c6517y3wqh::::res://Scenes/pickupitem.tscn<>uid://c1iv6q3wt6hu::::res://Assets/ItemIcons/coin_pickup.png<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn
 HealthBar.tscn::PackedScene::4631040200132461227::1736087923::0::1::::<><>::res://Scripts/health_bar.gd
 inventory.tscn::PackedScene::8940875234215055502::1734726516::0::1::::<><>::res://Scripts/inventory.gd<>uid://ca8c576a5phqg::::res://Assets/InventoryAssets/new_inv.png<>uid://g1v4ybfl14lg::::res://Assets/InventoryAssets/inv_slot.png<>res://Scripts/slot.gd
-item.tscn::PackedScene::3523450705393641718::1736632701::0::1::::<><>::res://Scripts/Item.gd<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf
-main_menu.tscn::PackedScene::1533639328401240166::1736632701::0::1::::<><>::res://Scripts/main_menu.gd<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf
-pickupitem.tscn::PackedScene::4411753671374877279::1736632701::0::1::::<><>::res://Scripts/pickup.tres.gd
-player.tscn::PackedScene::4770519661081944469::1736632701::0::1::::<><>::uid://cccvlj0biplxj::::res://Assets/pixil-frame-0.png<>res://Scripts/Pickupzone.gd<>uid://d0na55uvkxm4m::::res://Scenes/inventory.tscn<>uid://cmq2f12e12k0d::::res://Scenes/user_interface.tscn
-SingleRoom.tscn::PackedScene::7483436842290197669::1736632700::0::1::::<><>::uid://b87405xhmxpyr::::res://Scenes/player.tscn<>uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>uid://cj64ctjjdew7s::::res://Assets/furniture/Interiors_free_16x16.png<>uid://cyobw0e83skny::::res://Assets/furniture/bedFinal2.png<>uid://pqgv1lba81rl::::res://Assets/furniture/doorCompiled.png<>uid://b34c6517y3wqh::::res://Scenes/pickupitem.tscn<>uid://c7qk26gp4o22c::::res://Assets/ItemIcons/Stick.png<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png<>uid://c1iv6q3wt6hu::::res://Assets/ItemIcons/coin_pickup.png<>uid://dmnnutahp4r5v::::res://Scenes/chest.tscn<>uid://b8oqjwsw8p4eo::::res://Scenes/door.tscn<>res://Scenes/door.gd<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn<>uid://jwaodc2cxr8e::::res://Scenes/trader.tscn
-trader.tscn::PackedScene::677141066336288226::1736632702::0::1::::<><>::uid://bjdve61cj7tqs::::res://Assets/Entities/zombie1final without border.png<>uid://b46xkpdowosh6::::res://Assets/InventoryAssets/chest_inv.png<>uid://g1v4ybfl14lg::::res://Assets/InventoryAssets/inv_slot.png<>uid://c6eex726bqsxy::::res://Assets/InventoryAssets/counter_left.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf<>uid://bswxuf52irndg::::res://Assets/InventoryAssets/coin_counter_right.png
-user_interface.tscn::PackedScene::5649787230416149173::1736632701::0::1::::<><>::res://Scripts/User_Interface.gd<>uid://b68ks5fc7g5ln::::res://Scenes/HealthBar.tscn<>uid://cfykkl6i03jf8::::res://Assets/InventoryAssets/coin_counter.png<>uid://d3350y7gbrmiv::::res://Assets/InventoryAssets/health-bar-exterior.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf<>uid://bycrnkhlvhk0s::::res://Assets/InventoryAssets/coin_icon.png
-zombie.tscn::PackedScene::1654941913820974740::1736632701::0::1::::<><>::res://Scripts/zombie.gd<>uid://bjdve61cj7tqs::::res://Assets/Entities/zombie1final without border.png<>uid://b68ks5fc7g5ln::::res://Scenes/HealthBar.tscn
-::res://Scripts/::1736626872
+item.tscn::PackedScene::3523450705393641718::1736701043::0::1::::<><>::res://Scripts/Item.gd<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf
+main_menu.tscn::PackedScene::1533639328401240166::1736701043::0::1::::<><>::res://Scripts/main_menu.gd<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf
+pickupitem.tscn::PackedScene::4411753671374877279::1736701043::0::1::::<><>::res://Scripts/pickup.tres.gd
+player.tscn::PackedScene::4770519661081944469::1736701043::0::1::::<><>::uid://cccvlj0biplxj::::res://Assets/pixil-frame-0.png<>res://Scripts/Pickupzone.gd<>uid://d0na55uvkxm4m::::res://Scenes/inventory.tscn<>uid://cmq2f12e12k0d::::res://Scenes/user_interface.tscn
+SingleRoom.tscn::PackedScene::7483436842290197669::1736701043::0::1::::<><>::uid://b87405xhmxpyr::::res://Scenes/player.tscn<>uid://dbs37xnqoh00c::::res://Assets/furniture/Room_Builder_free_16x16.png<>uid://cj64ctjjdew7s::::res://Assets/furniture/Interiors_free_16x16.png<>uid://cyobw0e83skny::::res://Assets/furniture/bedFinal2.png<>uid://pqgv1lba81rl::::res://Assets/furniture/doorCompiled.png<>uid://b34c6517y3wqh::::res://Scenes/pickupitem.tscn<>uid://c7qk26gp4o22c::::res://Assets/ItemIcons/Stick.png<>uid://o1pnxci12e7v::::res://Assets/ItemIcons/Apple.png<>uid://c1iv6q3wt6hu::::res://Assets/ItemIcons/coin_pickup.png<>uid://dmnnutahp4r5v::::res://Scenes/chest.tscn<>uid://b8oqjwsw8p4eo::::res://Scenes/door.tscn<>res://door.gd<>uid://bi4k2uc3rwlt4::::res://Scripts/DataManaging/load_save.tscn<>uid://jwaodc2cxr8e::::res://Scenes/trader.tscn
+trader.tscn::PackedScene::677141066336288226::1736701044::0::1::::<><>::res://Scripts/trader.gd<>uid://bjdve61cj7tqs::::res://Assets/Entities/zombie1final without border.png<>uid://b46xkpdowosh6::::res://Assets/InventoryAssets/chest_inv.png<>uid://g1v4ybfl14lg::::res://Assets/InventoryAssets/inv_slot.png<>res://Scripts/trader_inventory.gd<>uid://c6eex726bqsxy::::res://Assets/InventoryAssets/counter_left.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf<>uid://bswxuf52irndg::::res://Assets/InventoryAssets/coin_counter_right.png<>uid://b2fnfkqdk4d1w::::res://Assets/InventoryAssets/buy_button_green.png<>uid://bycrnkhlvhk0s::::res://Assets/InventoryAssets/coin_icon.png
+user_interface.tscn::PackedScene::5649787230416149173::1736701043::0::1::::<><>::res://Scripts/User_Interface.gd<>uid://b68ks5fc7g5ln::::res://Scenes/HealthBar.tscn<>uid://cfykkl6i03jf8::::res://Assets/InventoryAssets/coin_counter.png<>uid://d3350y7gbrmiv::::res://Assets/InventoryAssets/health-bar-exterior.png<>uid://b0fj14w6xvshv::::res://Assets/fonts/PixelOperator8.ttf<>uid://bycrnkhlvhk0s::::res://Assets/InventoryAssets/coin_icon.png
+zombie.tscn::PackedScene::1654941913820974740::1736701043::0::1::::<><>::res://Scripts/zombie.gd<>uid://bjdve61cj7tqs::::res://Assets/Entities/zombie1final without border.png<>uid://b68ks5fc7g5ln::::res://Scenes/HealthBar.tscn
+::res://Scripts/::1736701033
 chest.gd::GDScript::-1::1736099144::0::1::::<>StaticBody2D<>::
+chest_icon.gd::GDScript::-1::1736073942::0::1::::<>Area2D<>::
 Chest_inv.gd::GDScript::-1::1736618334::0::1::::<>Area2D<>::
+coridoor.gd::GDScript::-1::1736183476::0::1::::<>Node2D<>::
 coridor_door.gd::GDScript::-1::1736079710::0::1::::<>Area2D<>::
 door_to_double_room.gd::GDScript::-1::1736079779::0::1::::<>Area2D<>::
+DoubleRoom.gd::GDScript::-1::1736183476::0::1::::<>Node2D<>::
 double_room_to_coridoor.gd::GDScript::-1::1736079710::0::1::::<>Area2D<>::
 game_state.gd::GDScript::-1::1736088635::0::1::::<>Resource<>::
 health_bar.gd::GDScript::-1::1736071434::0::1::::<>ProgressBar<>::
@@ -89,12 +92,14 @@ player.gd::GDScript::-1::1734726516::0::1::::<>CharacterBody2D<>::
 player_inv.gd::GDScript::-1::1736619262::0::1::::<>Node<>::
 slot.gd::GDScript::-1::1736111221::0::1::::<>Panel<>::
 Stick.gd::GDScript::-1::1734726516::0::1::::<>StaticBody2D<>::
+trader.gd::GDScript::-1::1736701033::0::1::::<>Node2D<>::
+trader_inventory.gd::GDScript::-1::1736700967::0::1::::<>Area2D<>::
 transition_manager.gd::GDScript::-1::1736626130::0::1::::<>Node<>::
 User_Interface.gd::GDScript::-1::1736619216::0::1::::<>CanvasLayer<>::
 zombie.gd::GDScript::-1::1736099144::0::1::::<>CharacterBody2D<>::
-::res://Scripts/DataManaging/::1736632701
+::res://Scripts/DataManaging/::1736701043
 jsondata.gd::GDScript::-1::1736087740::0::1::::<>Node<>::
-load_save.tscn::PackedScene::3008454828880589839::1736632701::0::1::::<><>::res://Scripts/load_save.gd
+load_save.tscn::PackedScene::3008454828880589839::1736701043::0::1::::<><>::res://Scripts/load_save.gd
 player_data.gd::GDScript::-1::1736612844::0::1::::PlayerData<>Resource<>::
 save_level.gd::GDScript::-1::1736180660::0::1::::SaveLevel<>Resource<>::
 single_room_data.gd::GDScript::-1::1736183133::0::1::::<>Node<>::

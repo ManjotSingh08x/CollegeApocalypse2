@@ -2,12 +2,14 @@
 	"Stick": {
 		"ItemCategory": "Resource",
 		"StackSize": 99,
+		"Cost": 3,
 		"Description": "A sturdy tree branch that can be used for crafting"
 	},
 	"Apple": {
 		"ItemCategory": "Consumable",
 		"AddHealth": 5,
 		"StackSize": 99,
+		"Cost": 5,
 		"Description": "A ripe and tasty apple"
 	},
 	"Sword": {
@@ -15,6 +17,13 @@
 		"ItemAttack": 10,
 		"ItemSpeed": 0.75,
 		"StackSize": 1,
+		"Cost": 15,
 		"Description": "Pretty rusty but gets the job done"
+	},
+	"Key": {
+		"ItemCategory": "Collectable",
+		"StackSize": 1,
+		"Cost": 15,
+		"Description": "Key used to open gates"
 	}
 }

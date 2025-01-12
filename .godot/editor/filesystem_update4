@@ -10,3 +10,10 @@ res://Scenes/player.tscn
 res://Scenes/user_interface.tscn
 res://Scenes/main_menu.tscn
 res://Scenes/trader.tscn
+res://Scripts/trader.gd
+res://Scripts/trader_inventory.gd
+res://GameData/ItemData.json
+res://Scripts/slot.gd
+res://Scenes/inventory.tscn
+res://Scripts/Item.gd
+res://Scripts/DataManaging/save_level.gd

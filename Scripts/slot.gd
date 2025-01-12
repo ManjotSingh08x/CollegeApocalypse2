@@ -67,7 +67,8 @@ func initialize_item(item_name, item_quantity):
 	refresh_style()
 	
 func remove_item():
-	remove_child(item)
+	if item:
+		remove_child(item)
 	item = null
 	refresh_style()
 	

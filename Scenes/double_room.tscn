@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://blxnem8xqgucg"]
 
-[ext_resource type="Script" path="res://Scenes/DoubleRoom.gd" id="1_kd2mk"]
+[ext_resource type="Script" path="res://Scripts/DoubleRoom.gd" id="1_kd2mk"]
 [ext_resource type="Texture2D" uid="uid://cyobw0e83skny" path="res://Assets/furniture/bedFinal2.png" id="1_ulanl"]
 [ext_resource type="Texture2D" uid="uid://cj64ctjjdew7s" path="res://Assets/furniture/Interiors_free_16x16.png" id="2_ciy74"]
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="3_nl23l"]

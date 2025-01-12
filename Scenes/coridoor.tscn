@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dxdudjo24nf2a"]
 
 [ext_resource type="Texture2D" uid="uid://dbs37xnqoh00c" path="res://Assets/furniture/Room_Builder_free_16x16.png" id="1_fyipr"]
-[ext_resource type="Script" path="res://Scenes/coridoor.gd" id="1_oa1nm"]
+[ext_resource type="Script" path="res://Scripts/coridoor.gd" id="1_oa1nm"]
 [ext_resource type="Texture2D" uid="uid://pqgv1lba81rl" path="res://Assets/furniture/doorCompiled.png" id="2_cm4r8"]
 [ext_resource type="PackedScene" uid="uid://b87405xhmxpyr" path="res://Scenes/player.tscn" id="3_e8de5"]
 [ext_resource type="Script" path="res://Scripts/coridor_door.gd" id="4_ntdwb"]

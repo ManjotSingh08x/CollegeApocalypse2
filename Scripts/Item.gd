@@ -1,5 +1,4 @@
 extends Node2D
-
 var item_name
 var item_quantity
 var parent_slot = null

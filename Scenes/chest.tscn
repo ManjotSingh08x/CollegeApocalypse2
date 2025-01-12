@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b46xkpdowosh6" path="res://Assets/InventoryAssets/chest_inv.png" id="3_ow21c"]
 [ext_resource type="Script" path="res://Scripts/Chest_inv.gd" id="3_ri4kt"]
 [ext_resource type="Script" path="res://Scripts/slot.gd" id="4_7c56v"]
-[ext_resource type="Script" path="res://Scenes/chest_icon.gd" id="6_hdy3a"]
+[ext_resource type="Script" path="res://Scripts/chest_icon.gd" id="6_hdy3a"]
 [ext_resource type="Texture2D" uid="uid://1amtxvm55ngw" path="res://Assets/InventoryAssets/tiny_chest_inv_filled.png" id="7_kay84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwr1o"]
